@@ -1,0 +1,160 @@
+
+@import "../../responsive.scss";
+
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0rem;
+    height: 10rem;
+
+    a {
+        transition: all .4 ease;
+
+        &:hover {
+            scale: 1.05;
+        }
+    }
+    
+    .left {
+        flex: 3;
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
+                object-fit: cover;
+            }
+
+            span {
+                color: #070F2B;
+                font-size: 2.5rem;
+                font-weight: 800;
+
+                @include md {
+                    display: none;
+                }
+
+                @include sm {
+                    display: block;
+                }
+
+
+
+                i {
+                    color: #9290C3;
+                    font-weight: 600;
+                    font-size: 2rem;
+                }
+            }
+           
+        }
+
+        .links {
+            display: flex;
+            gap: 3.5rem;
+
+            @include sm {
+                display: none;
+            }
+
+
+            a {
+                color: #070F2B;
+                font-size: 1.4;
+            }
+        }
+    }
+
+
+    .right {
+        flex: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2.5rem;
+        height: 100%;
+
+
+        .menu-img {
+            display: none;
+            width: 3rem;
+            height: 3rem;
+            z-index: 928;
+            cursor: pointer;
+
+
+            @include sm {
+                display: initial;
+            }
+        
+         }
+
+        .menu {
+            background-color: #070F2B;
+            height: 100vh;
+            width: 50%;
+            position: absolute;
+            top: 0;
+            right: -50%;
+            flex-direction: column;
+            align-items: center;
+            gap: 4rem;
+            padding-top: 12rem;
+            transition: all 1s ease;
+            display: none;
+
+            @include sm {
+                display: flex;
+            }
+
+
+            &.active {
+                right: 0;
+            }
+
+
+            a {
+            color: white;
+            }
+        }
+
+
+      
+
+        .button{
+            font-size: 1.5rem;
+            color: hsl(0, 0%, 12%);
+            padding: .6rem .9rem;
+        
+            @include sm {
+                display: none;
+            }
+
+            &:first-child {
+                background-color: inherit;
+            }
+
+
+            &:last-child {
+                background-color: #1B1A55;
+                color: white;
+            }
+
+        }
+
+
+
+        
+        
+    }
+}
